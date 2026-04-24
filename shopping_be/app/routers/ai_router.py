@@ -9,6 +9,7 @@ from app.services.auth_service import AuthService
 from app.ai.chatbot_service import ChatbotService
 from app.ai import document_service
 from app.ai.report_service import ReportService
+from app.repositories.user_repository import UserRepository
 
 router = APIRouter(prefix="/api/ai", tags=["AI"])
 
@@ -54,7 +55,12 @@ def chat(
 ):
     user_id = body.user_id
     if user_id is None and current_user:
-        user_id = current_user.get("id") or current_user.get("user_id")
+        username = current_user.get("sub")
+        if username:
+            user_repo = UserRepository(db)
+            user = user_repo.find_by_username(username)
+            if user:
+                user_id = user.id
 
     service = ChatbotService(db)
     result = service.chat(body.question, user_id=user_id)
