@@ -129,5 +129,17 @@ Không commit file .env lên GitHub
 
 Giữ API key bí mật
 
+### 4. Thông tin kiểm thử với OnePay
+Chọn thẻ VCB - ATM
+
+Số thẻ: 9704360000000000002
+
+Tên chủ thẻ: NGUYEN VAN A
+
+Ngày hết hạn: 01/13
+
+OTP: 123456
+
+
 
 
