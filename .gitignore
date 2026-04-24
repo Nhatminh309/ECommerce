@@ -1,0 +1,59 @@
+# ===============================
+#ROOT
+# ===============================
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
+# ===============================
+#ENV (QUAN TRỌNG)
+# ===============================
+.env
+*.env
+!.env.example
+
+shopping_be/.env
+shopping_fe/.env
+
+# ===============================
+#PYTHON BACKEND (shopping_be)
+# ===============================
+shopping_be/__pycache__/
+shopping_be/**/*.pyc
+shopping_be/**/*.pyo
+
+shopping_be/.venv/
+shopping_be/venv/
+
+# uploads (user upload → KHÔNG commit)
+shopping_be/uploads/
+
+# ===============================
+#REACT FRONTEND (shopping_fe)
+# ===============================
+shopping_fe/node_modules/
+shopping_fe/dist/
+shopping_fe/build/
+
+# vite cache
+shopping_fe/.vite/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===============================
+#DOCKER
+# ===============================
+*.env.docker
+docker-compose.override.yml
+
+# ===============================
+#MISC
+# ===============================
+*.log
+*.tmp
+*.swp
+*.bak
